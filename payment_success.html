@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pagamento Confirmado</title>
+    <script>
+        window.onload = function () {
+            // Fechar a janela após 3 segundos
+            setTimeout(function () {
+                window.close();
+                // Tentar comunicar com o app principal
+                try {
+                    window.opener.location.reload();
+                } catch (e) {
+                    console.log("Não foi possível recarregar o app principal");
+                }
+            }, 3000);
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .success-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .success-icon {
+            color: #4CAF50;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="success-container">
+        <div class="success-icon">✓</div>
+        <h1>Pagamento Confirmado com Sucesso!</h1>
+        <p>Seu plano foi ativado. Esta janela será fechada automaticamente.</p>
+        <p>Por favor, retorne ao aplicativo e atualize a página para ver seu novo plano.</p>
+    </div>
+</body>
+
+</html>
